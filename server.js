@@ -26,7 +26,7 @@ app.get("/",function(req,res){
 //     res.end("signup");
 // })
 
-// app.post("/login",sessionController.login)
+app.post("/login",sessionController.login)
 // app.post("/signup",sessionController.signup)
 
 
