@@ -1,6 +1,6 @@
 var express = require("express")
 const mongoose = require('mongoose');
-
+const cors = require("cors")
 var sessionController = require("./controller/sessionController")
 const roleController = require("./controller/roleController")
 const userController = require("./controller/userController")
@@ -9,6 +9,7 @@ const userController = require("./controller/userController")
 var app = express()
 
 //middle 
+app.use(cors())
 app.use(express.json())//json 
 app.use(express.urlencoded({extended:true}))
 
