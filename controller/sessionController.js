@@ -5,15 +5,23 @@ function login(req, res) {
         if (err) {
             res.json({
                 status: -1,
-                msg: "Invalid Credentials",
+                msg: "SMW",
                 data: req.body
             })
         } else {
-            res.json({
-                status: 200,
-                msg: "Login done",
-                data: data
-            })
+            if (data == null) {
+                res.json({
+                    status: -1,
+                    msg: "Invalid Credentials....",
+                    data: req.body
+                })
+            } else {
+                res.json({
+                    status: 200,
+                    msg: "Login done",
+                    data: data
+                })
+            }
         }
     })
 }
