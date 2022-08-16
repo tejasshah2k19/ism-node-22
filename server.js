@@ -2,6 +2,8 @@ var express = require("express")
 const mongoose = require('mongoose');
 
 var sessionController = require("./controller/sessionController")
+const roleController = require("./controller/roleController")
+
 
 var app = express()
 
@@ -25,6 +27,15 @@ app.get("/",function(req,res){
 
 app.post("/login",sessionController.login)
 app.post("/signup",sessionController.signup)
+
+
+
+//role 
+app.post("/role",roleController.addRole)
+app.get("/role",roleController.getAllRoles)
+app.get("/role/:roleId",roleController.getRoleById)
+app.delete("/role/:roleId",roleController.deleteByRoleId)
+app.put("/role",roleController.updatRole)
 
 //sync 
 //simple 
